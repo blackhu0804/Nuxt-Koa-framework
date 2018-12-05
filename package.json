@@ -12,10 +12,12 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-loader": "^8.0.4",
     "cross-env": "^5.0.1",
     "eslint-loader": "^2.1.1",
     "koa": "^2.4.1",
+    "koa-router": "^7.4.0",
     "nuxt": "latest",
     "source-map-support": "^0.4.15"
   },

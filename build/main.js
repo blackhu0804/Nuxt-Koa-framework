@@ -65,7 +65,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -129,26 +129,52 @@ module.exports = {
 
 /***/ },
 /* 1 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-module.exports = require("koa");
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_koa_router__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_koa_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_koa_router__);
+
+const router = new __WEBPACK_IMPORTED_MODULE_0_koa_router___default.a({
+  prefix: '/city'
+});
+router.get('/list', async ctx => {
+  ctx.body = {
+    list: ['北京', '天津']
+  };
+});
+/* harmony default export */ exports["a"] = router;
 
 /***/ },
 /* 2 */
 /***/ function(module, exports) {
 
-module.exports = require("nuxt");
+module.exports = require("koa");
 
 /***/ },
 /* 3 */
+/***/ function(module, exports) {
+
+module.exports = require("nuxt");
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+module.exports = require("koa-router");
+
+/***/ },
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_koa__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_koa__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_koa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_koa__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_nuxt__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__interface_city__ = __webpack_require__(1);
+
 
 
 
@@ -168,6 +194,7 @@ async function start() {
     await builder.build();
   }
 
+  app.use(__WEBPACK_IMPORTED_MODULE_2__interface_city__["a" /* default */].routes()).use(__WEBPACK_IMPORTED_MODULE_2__interface_city__["a" /* default */].allowedMethods());
   app.use(ctx => {
     ctx.status = 200;
     ctx.respond = false; // Mark request as handled for Koa
