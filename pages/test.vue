@@ -2,7 +2,7 @@
   <div class="content">
     test
     <ul>
-      <li v-for="(item, index) in list" :key="index">{{item}}</li>
+      <li v-for="(item, index) in $store.state.city.list" :key="index">{{item}}</li>
     </ul>
   </div>
 </template>

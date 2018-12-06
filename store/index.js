@@ -6,7 +6,7 @@ import navbar from './modules/navbar'
 Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
-  modules： {
+  modules: {
     city,
     navbar
   },
